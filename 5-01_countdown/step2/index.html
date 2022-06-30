@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5-01_countdown</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>カウントダウンタイマー</h1>
+<h2>1秒ごとに再計算する</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p>いまから<span id="timer"></span>以内に注文すると50%オフ！</p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+'use strict';
+
+function countdown(due) {
+    const now = new Date();
+
+    const rest = due.getTime() - now.getTime();
+    const sec = Math.floor(rest / 1000) % 60;
+    const min = Math.floor(rest / 1000 / 60) % 60;
+    const hours = Math.floor(rest / 1000 / 60 / 60) % 24;
+    const days = Math.floor(rest / 1000 / 60 / 60 / 24);
+    const count = [days, hours, min, sec];
+
+    return count;
+}
+
+let goal = new Date();
+goal.setHours(23);
+goal.setMinutes(59);
+goal.setSeconds(59);
+
+function recalc() {
+    const counter = countdown(goal);
+    const time = `${counter[1]}時間${counter[2]}分${counter[3]}秒`;
+    document.getElementById('timer').textContent = time;
+    refresh();  
+}
+
+function refresh() {
+    setTimeout(recalc, 1000);
+}
+
+recalc();
+</script>
+</body>
+</html>

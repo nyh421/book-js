@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+main .container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+#place {
+    text-align: center;
+}
+#now {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    max-width: 400px;
+    min-height: 400px;
+}
+#now .icon img {
+    width: 400px;
+}
+#now .info p {
+    text-align: center;
+}
+#now .temp {
+    margin-left: 1rem;
+    padding-left: 24px;
+    background: url(../images/thermometer.svg) 0 0 no-repeat;
+    background-size: 24px 24px;
+}
+#forecast {
+    border-collapse: collapse;
+    margin: 2rem auto 0;
+    width: 400px;
+}
+#forecast th, #forecast td {
+    border-top: 1px solid #ccc;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#forecast tr td:first-of-type {
+    border-left: 1px solid #ccc;
+}
+#forecast tr td:last-of-type {
+    border-right: 1px solid #ccc;
+    text-align: right;
+}
+#forecast tr:last-of-type {
+    border-bottom: 1px solid #ccc;
+}
+#forecast .icon {
+    width: 48px;
+}
+#forecast .icon img {
+    width: 48px;
+    height: 48px;
+}
+#forecast .info p {
+    margin: 0;
+}
+#forecast .temp {
+    margin-left: 1rem;
+    padding-left: 24px;
+    background: url(../images/thermometer.svg) 0 0 no-repeat;
+    background-size: 24px 24px;   
+}
+
+/*　ローディングサイン　*/
+#now {
+    background-image: url(../images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}

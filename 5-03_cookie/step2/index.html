@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5-03_cookie</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+<link href="panel.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>プライバシーポリシー承認パネルを作る</h1>
+<h2>クッキーの読み・書き・削除</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p><button id="testbtn">テスト用 cookie削除</button></p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+
+<div id="privacy-panel">
+    <p>当サイトではユーザーエクスペリエンス向上のためクッキーを使用しています。また、匿名でアクセス状況のデータを収集しています。詳しい情報は当サイトのプライバシーポリシーをご覧ください。</p>
+    <button id="agreebtn">承認する</button>
+</div>
+
+<script src="../../_common/scripts/js.cookie.js"></script>
+<script>
+'use strict';
+
+const agree = Cookies.get('cookie-agree');
+if(agree === 'yes') {
+    console.log('クッキーを確認しました');
+} else {
+    console.log('クッキーを確認できません');
+    document.getElementById('agreebtn').onclick = function() {
+        Cookies.set('cookie-agree', 'yes', {expires: 7});
+    };
+}
+
+// クッキー削除（テスト用）
+document.getElementById('testbtn').onclick = function() {
+    Cookies.remove('cookie-agree');
+};
+</script>
+</body>
+</html>

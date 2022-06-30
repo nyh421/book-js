@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3-08_function</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>税込価格を計算する</h1>
+<h2>HTMLに出力する</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p id="output"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+'use strict';
+
+function total(price) {
+    const tax = 0.1;
+    return price + price * tax;
+}
+
+console.log('コーヒーメーカーの値段は' + total(8000) + '円（税込）です。');
+document.getElementById('output').textContent = 'コーヒーメーカーの値段は' + total(8000) + '円（税込）です。';
+document.getElementById('output2').textContent = 'コーヒーフィルターの値段は' + total(200) + '円（税込）です。';
+document.getElementById('output3').textContent = 'コーヒー豆の値段は' + total(1000) + '円（税込）です。';
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4-01_input</title>
+<link rel="shortcut icon" href="../../_common/images/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>フォームの入力内容を取得する</h1>
+<h2>まずはイベントをテスト</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <form action="#" id="form">
+        <input type="submit" value="検索">
+    </form>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+'use strict';
+
+document.getElementById('form').onsubmit = function() {
+    console.log('クリックされました');
+};
+</script>
+</body>
+</html>
