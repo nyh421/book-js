@@ -18,9 +18,13 @@
 <main>
 <div class="container">
 <section>
-  <h1>やることリスト</h1>
-  <ul id="list">
-  </ul>
+  <table>
+    <tr>
+      <td id="title"></td>
+      <td id="price"></td>
+      <td id="stock"></td>
+    </tr>
+  </table>
 </section>
 </div><!-- /.container -->
 </main>
@@ -31,12 +35,10 @@
 </footer>
 <script>
   "use strict";
-  let todo = ["デザインカップ作成", "データ処理", "勉強会申し込み", "牛乳買う"];
-  todo.push("歯医者に行く");
-  for(let item of todo) {
-    const li = `<li>${item}</li>`;
-    document.getElementById("list").insertAdjacentHTML("beforeend", li);
-  }
+  let jsbook = {title: "javascript入門", price: 2500, stock: 3};
+  document.getElementById("title").textContent = jsbook.title;
+  document.getElementById("price").textContent = jsbook.price + "円";
+  document.getElementById("stock").textContent = jsbook.stock;
 </script>
 </body>
 </html>

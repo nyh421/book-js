@@ -18,9 +18,11 @@
 <main>
 <div class="container">
 <section>
-  <h1>やることリスト</h1>
-  <ul id="list">
-  </ul>
+  <form action="#" id="form">
+    <input type="text" name="word">
+    <input type="submit" value="検索">
+  </form>
+  <p id="output"></p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -31,12 +33,11 @@
 </footer>
 <script>
   "use strict";
-  let todo = ["デザインカップ作成", "データ処理", "勉強会申し込み", "牛乳買う"];
-  todo.push("歯医者に行く");
-  for(let item of todo) {
-    const li = `<li>${item}</li>`;
-    document.getElementById("list").insertAdjacentHTML("beforeend", li);
-  }
+  document.getElementById("form").onsubmit = function(event) {
+    event.preventDefault();
+    const search = document.getElementById("form").word.value;
+    document.getElementById("output").textContent = `「${search}」の検索中...`;
+  };
 </script>
 </body>
 </html>
